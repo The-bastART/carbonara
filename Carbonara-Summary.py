@@ -4,6 +4,9 @@ import os
 path="/media/tilmann/Archiv/Archiv/FHP-Kd/Semester-02/(11EG-K)_Slow_Planet/U1_Online Energy Consumption Self-Portrait/capture/csv/"
 destinations=[]
 
+start="2020-04-07 20:00"
+end="2020-04-14 19:59"
+
 directory = os.fsencode(path)
 for file in os.listdir(directory):
     filename=os.fsdecode(file)
