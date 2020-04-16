@@ -23,7 +23,7 @@ for file in os.listdir(directory):
                     io="i"
                     host=row[2]
                 
-                co2=((float(row[5]) * 0.000000000072 * 519) + (float(row[5]) * 0.000000000152 * 519))*1000 #in mg
+                co2=(int(row[5]) * 0.000000000072 * 519) + (int(row[5]) * 0.000000000152 * 519)
 
                 new_row=(row[1][:16],host,io,row[5],co2)
 
