@@ -32,6 +32,19 @@ arr=[]
 reader=csv.reader(open(path+filename, "rt"))
 writer=csv.writer(open(path+"Carbonara_Edit.csv", "wt"))
 row=next(reader)
+#write header
+new_row=("Date-Time","No.01 Host","No.01 Traffic in MiB","No.01 CO2 in mg", \
+                     "No.02 Host","No.02 Traffic in MiB","No.02 CO2 in mg", \
+                     "No.03 Host","No.03 Traffic in MiB","No.03 CO2 in mg", \
+                     "No.04 Host","No.04 Traffic in MiB","No.04 CO2 in mg", \
+                     "No.05 Host","No.05 Traffic in MiB","No.05 CO2 in mg", \
+                     "No.06 Host","No.06 Traffic in MiB","No.06 CO2 in mg", \
+                     "No.07 Host","No.07 Traffic in MiB","No.07 CO2 in mg", \
+                     "No.08 Host","No.08 Traffic in MiB","No.08 CO2 in mg", \
+                     "No.09 Host","No.09 Traffic in MiB","No.09 CO2 in mg", \
+                     "No.10 Host","No.10 Traffic in MiB","No.10 CO2 in mg", \
+                     "Misc Hosts", "Misc Traffic in MiB", "Misc CO2 in mg")
+writer.writerow(new_row)
         
 while dc!=de or hc!=he or mc!=me:
     mc=mc+1
@@ -65,21 +78,26 @@ while dc!=de or hc!=he or mc!=me:
         arr.sort(key=lambda x: x[1], reverse=True)
         otherB=0
         otherC=0
-        for k in range(9, len(arr)):
+        print(current)
+        for k in range(10, len(arr)):
             otherB=otherB+arr[k][1]
             otherC=otherC+arr[k][2]
-        new_row=(current,arr[0][0],arr[0][1],arr[0][2], \
-                        arr[1][0],arr[1][1],arr[1][2], \
-                        arr[2][0],arr[2][1],arr[2][2], \
-                        arr[3][0],arr[3][1],arr[3][2], \
-                        arr[4][0],arr[4][1],arr[4][2], \
-                        arr[5][0],arr[5][1],arr[5][2], \
-                        arr[6][0],arr[6][1],arr[6][2], \
-                        arr[7][0],arr[7][1],arr[7][2], \
-                        arr[8][0],arr[8][1],arr[8][2], \
-                        "other", otherB, otherC)
+        r=[]
+        r.append(current)
+        for p in range(0,9):
+            try:
+                r.append(arr[p][0])
+                r.append(arr[p][1]/1024/1024)
+                r.append(arr[p][2])
+            except:
+                break
+        r.append("various")
+        r.append(otherB/1024/1024)
+        r.append(otherC/1000)
+        new_row=tuple(r)
+
         writer.writerow(new_row)
-        print(arr)
+        #print(arr)
         arr=[]
         arrD=[]
         arrB=[]
