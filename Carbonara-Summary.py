@@ -1,5 +1,4 @@
 import csv
-import os
 
 path=""
 filename="Carbonara_Merged.csv"

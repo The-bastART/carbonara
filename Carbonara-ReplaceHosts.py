@@ -2,9 +2,9 @@ import csv
 
 path=""
 filename="Carbonara_Merged.csv"
-filename1="hosts.csv"
+filenameH="hosts.csv"
 
-arr=csv.reader(open(path+filename1,"rt"))
+arr=csv.reader(open(path+filenameH,"rt"))
 hosts=list(arr)
 hosts1=[]
 hosts2=[]

@@ -10,6 +10,7 @@ for file in os.listdir(directory):
     if(os.path.isfile(path+filename)):
         with open(path+filename, "rt") as inp, open(path+"tmp/"+filename, "wt") as out:
             writer = csv.writer(out)
+            print("reading file: " + filename)
             for row in csv.reader(inp):
                 if row[3]!="Broadcast" and row[3]!="239.255.102.18" and \
                 row[3]!="255.255.255.255" and row[3]!="ff02::c" and row[3]!="239.255.255.250" and row[4]!="ARP" and row[4]!="BJNP" and \
