@@ -23,7 +23,7 @@ You have to set this up every time Wireshark is opened (e.g. after you restarted
 ## Potential FritzBox Alternative
 In case your router is an AVM FritzBox (not 64-Series) you can also directly capture from there with the advantage
 that you also get WLAN-Traffic.<br>
-**!!! If you are not the only client, make sure that all clients agree or otherwise just leave it.**
+**!!! If you are not the only client, make sure that all clients agree or otherwise just leave it.**<br>
 This hasn't been tested on large scale captures as it is intended as a debug utility. It might not work.
 You will also get files which can be opened in Wireshark.
 [FritzBox Capture Page](http://fritz.box/html/capture.html)
@@ -32,8 +32,8 @@ You will also get files which can be opened in Wireshark.
 ![Wireshark Export CSV](images/img_03.png)
 ![Wireshark Export CSV](images/img_04.png)<br>
 Please make sure to you use leading 0s in your file naming. <br>
-Wrong: file_1.csv<br>
-Right: file_01.csv<br>
+Wrong:  file_1.csv<br>
+Right:  file_01.csv<br>
 Otherwise the order will be messed up later on.
 
 ## Setup Python 3.x
@@ -52,7 +52,7 @@ Here we filter out all local network traffic and other undesired stuff.
 Additionally the Source and Destination Columns are merged into one and an in- or outgoing (i/o) column is added.
 You need to adjust the following lines:
 <pre>
-l.4  | path="<b>D:/this/is/my/path/</b>" (Do not forget the last <b>/</b>) 
+l.4  | path="<b>D:/this/is/my/path/</b>" #(Do not forget the last <b>/</b>) 
 l.14 | if <b>row[3]!="Remove this" and </b>row[3]!="Broadcast" and row[3]!="239.255.102.18" and \ 
 l.20 | if row[2]=="<b>My Local Host Name</b>":
 l.23 | elif row[3]=="<b>My Local Host Name</b>":</pre>
@@ -65,7 +65,7 @@ If you are on Windows also:
 
 ## Removing CSV Headers
 [Carbonara-CSVrmvHeaders.sh](Carbonara-CSVrmvHeaders.sh)<br>
-If you are on a Unix-System (macOS or Linux) you are in luck because this doesn't run on Windows (you can try bash -c "script" in command line but this has resulted in nothing but errors yet). But you can also do it manually.
+If you are on a Unix-System (macOS or Linux) you are in luck because this doesn't run on Windows (you can try ubash -c "script" in command line but this has resulted in nothing but errors yet). But you can also do it manually.
 
 ## Merging CSV
 [Carbonara-MergeCSV.sh](Carbonara-MergeCSV.sh)<br>
@@ -81,7 +81,7 @@ because some different services also might use the same server.
 
 You need to change the file path again:
 <pre>
-l.3  | path="<b>D:/this/is/my/path/</b>" (Do not forget the last <b>/</b>) </pre>
+l.3  | path="<b>D:/this/is/my/path/</b>" #(Do not forget the last <b>/</b>) </pre>
 
 If you created your own hosts file already change the following:
 <pre>
@@ -101,7 +101,7 @@ PS: I wanted to add some more statistics here - hence the name - but decided one
 
 You need to change the file path again:
 <pre>
-l.3  | path="<b>D:/this/is/my/path/</b>" (Do not forget the last <b>/</b>) </pre>
+l.3  | path="<b>D:/this/is/my/path/</b>" #(Do not forget the last <b>/</b>) </pre>
 
 If you are on Windows also:
 <pre>l.6  | with open(path+filename, "rt"<b>, newline=''</b>) as inp, open(path+"tmp/"+filename, "wt") as out:</pre>
@@ -131,7 +131,7 @@ this isn't necessarily the last step of our journey but you might want to go bac
 
 You know the drill by now:
 <pre>
-l.3  | path="<b>D:/this/is/my/path/</b>" (Do not forget the last <b>/</b>) </pre>
+l.3  | path="<b>D:/this/is/my/path/</b>" #(Do not forget the last <b>/</b>) </pre>
 
 Adjust the start and end time you want to evaluate to your needs:
 <pre>
@@ -147,3 +147,4 @@ If you are on Windows also:
 <pre>l.31 | reader=csv.reader(open(path+filename, "rt"<b>, newline=''</b>))</pre>
 
 PS: Evaluation over the changing of the months is currently not supported.
+PPS: If you stopped the capturing (e.g. turning your computer off) it will at the moment result into row being filled with 0 where there is no data. It was not really intended (because I didn't need to deal with that) but there are also some advantages to it. I might add an option in the future none the less.
