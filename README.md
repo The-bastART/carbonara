@@ -93,7 +93,7 @@ l.7  | arr=csv.reader(open(path+filename1,"rt"<b>, newline=''</b>))
 l.15 | arr=csv.reader(open(path+filename,"rt"<b>, newline=''</b>))</pre>
 
 ## Top 200 Destinations
-[Carbonara-Statistics.py](Carbonara-Statistics.py)
+[Carbonara-Statistics.py](Carbonara-Statistics.py)<br>
 In this step you will get the 200 domains with which you communicated. This way you can find more domains which you
 might want to replace in a new hosts file.
 
@@ -146,5 +146,5 @@ l.73 | if mc%<b>minutes</b>==0:
 If you are on Windows also:
 <pre>l.31 | reader=csv.reader(open(path+filename, "rt"<b>, newline=''</b>))</pre>
 
-PS: Evaluation over the changing of the months is currently not supported.
+PS: Evaluation over the changing of the months is currently not supported.<br>
 PPS: If you stopped the capturing (e.g. turning your computer off) it will at the moment result into row being filled with 0 where there is no data. It was not really intended (because I didn't need to deal with that) but there are also some advantages to it. I might add an option in the future none the less.
