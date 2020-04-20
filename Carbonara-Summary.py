@@ -1,7 +1,7 @@
 import csv
 import os
 
-path="/media/tilmann/Archiv/Archiv/FHP-Kd/Semester-02/(11EG-K)_Slow_Planet/U1_Online Energy Consumption Self-Portrait/capture/csv/tmp/"
+path=""
 filename="Carbonara_Merged.csv"
 destinations=[]
 
@@ -42,10 +42,9 @@ new_row=("Date-Time","No.01 Host","No.01 Traffic in MiB","No.01 CO2 in mg", \
                      "No.07 Host","No.07 Traffic in MiB","No.07 CO2 in mg", \
                      "No.08 Host","No.08 Traffic in MiB","No.08 CO2 in mg", \
                      "No.09 Host","No.09 Traffic in MiB","No.09 CO2 in mg", \
-                     "No.10 Host","No.10 Traffic in MiB","No.10 CO2 in mg", \
                      "Misc Hosts", "Misc Traffic in MiB", "Misc CO2 in mg")
 writer.writerow(new_row)
-        
+
 while dc!=de or hc!=he or mc!=me:
     mc=mc+1
     while row[0]==current:

@@ -1,15 +1,16 @@
 import csv
 
-path="/media/tilmann/Archiv/Archiv/FHP-Kd/Semester-02/(11EG-K)_Slow_Planet/U1_Online Energy Consumption Self-Portrait/capture/csv/tmp/"
+path=""
 filename="Carbonara_Merged.csv"
 
-with open(path+filename, "rt") as inp, open(path+"hosts.csv", "wt") as out:
+with open(path+filename, "rt") as inp, open(path+"hosts_2.csv", "wt") as out:
     writer = csv.writer(out)
     sortedListD=[]
     sortedListB=[]
     sortedListC=[]
     sortedList=[]
     for row in csv.reader(inp):
+        print(row)
         if row[1] in sortedListD:
             index=sortedListD.index(row[1])
             sortedListB[index]=sortedListB[index]+int(row[3])

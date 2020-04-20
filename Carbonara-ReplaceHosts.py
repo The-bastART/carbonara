@@ -1,6 +1,6 @@
 import csv
 
-path="/media/tilmann/Archiv/Archiv/FHP-Kd/Semester-02/(11EG-K)_Slow_Planet/U1_Online Energy Consumption Self-Portrait/capture/csv/tmp/"
+path=""
 filename="Carbonara_Merged.csv"
 filename1="hosts.csv"
 

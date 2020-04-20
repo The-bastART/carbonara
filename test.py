@@ -1,4 +1,7 @@
 import math
+from colorhash import ColorHash
+c=ColorHash("Facebook")
+print(c.rgb)
 min=0
 day=0
 hour=0
