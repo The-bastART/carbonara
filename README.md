@@ -65,7 +65,7 @@ If you are on Windows also:
 
 ## Removing CSV Headers
 [Carbonara-CSVrmvHeaders.sh](Carbonara-CSVrmvHeaders.sh)<br>
-If you are on a Unix-System (macOS or Linux) you are in luck because this doesn't run on Windows (you can try ubash -c "script" in command line but this has resulted in nothing but errors yet). But you can also do it manually.
+If you are on a Unix-System (macOS or Linux) you are in luck because this doesn't run on Windows (you can try bash -c "script" in command line but this has resulted in nothing but errors yet). But you can also do it manually.
 
 ## Merging CSV
 [Carbonara-MergeCSV.sh](Carbonara-MergeCSV.sh)<br>
